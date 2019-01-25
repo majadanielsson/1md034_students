@@ -1,10 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>DELI-VERY</title>
+        <title>Maja's Burgers</title>
+        <meta charset="utf-8"/>
     </head>
     <body>
-        <h1>Hello World!!!</h1>
-        <a href="/map" target="_blank">Open map in new window</a>.
-    </body>
+      <main>
+        <h1>Welcome to Maja's Burgers</h1>
+        <section>
+          <h2>Select your burger</h2>
+          <p>Choose your favorite burger below</p>
+          <table>
+            <thead>
+              <tr>
+                <th>BBQ Burger</th>
+                <th>Chicken Burger</th>
+                <th>Vegan Burger</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg" alt="BBQ Burger" title="BBQ Burger" width="150" height="100">
+                <td><img src="https://www.chicken.ca/assets/RecipePhotos/_resampled/FillWyIxNDQwIiwiNzAwIl0/Moist-Chicken-Burgers.jpg" alt="Chicken Burger" title="Chicken Burger" width="150" height="100">
+                <td><img src="https://thecheekychickpea.com/wp-content/uploads/2018/07/IMG_1013-2.jpg" alt="Vegan Burger" title="Vegan Burger" width="150" height="100">
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>
+                  <ul>
+                    <li>Contains gluten</li>
+                    <li>Lactose free</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>Gluten free</li>
+                    <li>Contains lactose</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>Gluten free</li>
+                    <li>Lactose free</li>
+                    <li>Vegan</li>
+                  </ul>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+          </section>
+
+          <section>
+            <h2>Customer information</h2>
+            <p>Please provide your information below</p>
+            <h3>Delivery information:
+            <section id="delivery info">
+              <form>
+                <p>
+                  <label for="name">Full name</label><br>
+                  <input type="text" id="name" name="fn" required="required" placeholder="First- and last name">
+                </p>
+                <p>
+                  <label for="email">E-mail</label><br>
+                  <input type="email" id="email" name="e" required="required" placeholder="E-mail address">
+                </p>
+                <p>
+                  <label for="street">Street</label><br>
+                  <input type="text" id="street" name="st" required="required" placeholder="Street name">
+                </p>
+                <p>
+                  <label for="house">House</label><br>
+                  <input type="number" id="house" name="hs" required="required" placeholder="House number">
+                </p>
+                <p>
+                  <label for="payment">Payment</label><br>
+                  <select id="payment" name="pym">
+                    <option>Credit card</option>
+                    <option>Swish</option>
+                    <option>Cash at drop-off</option>
+                  </select>
+                <p>Gender</p>
+                  <input type="radio" id="female" name="gender" checked>
+                  <label for="female">Female</label><br>
+                  <input type="radio" id="male" name="gender" checked>
+                  <label for="male">Male</label><br>
+                  <input type="radio" id="nb" name="gender" checked>
+                  <label for="nb">Non-binary</label><br>
+                  <input type="radio" id="undisclosed" name="gender" checked>
+                  <label for="undisclosed">Undisclosed</label><br>
+                <button type="submit"><img src="http://vectips.com/wp-content/uploads/2016/02/133133.jpg", width="20" height="20">Place my order!</button>
+              </form>
+            </section>
+          </section>
+      </main>
+   </body>
 </html>
