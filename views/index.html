@@ -1,57 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <title>Maja's Burgers</title>
         <meta charset="utf-8"/>
     </head>
     <body>
       <main>
-        <h1>Welcome to Maja's Burgers</h1>
-        <section>
+        <h1 class="header" id="headertext">Welcome to Maja's Burgers</h1>
+        <img src="http://d1hkwj6qq9t78x.cloudfront.net/static/ui/SiteSunset.jpg" alt="Maja's Burgers" title="headerphoto" class="header" id="headerphoto">
+        <section id="select">
           <h2>Select your burger</h2>
           <p>Choose your favorite burger below</p>
-          <table>
+          <div class="wrapper">
+            <div class="BBQ">BBQ Burger</div>
+            <div class="BBQphoto">
+              <img src="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg" width="150" height="100">
+            </div>
+            <div class="BBQlist">
+              <ul>
+                <li>Contains <span class="ingr">gluten</li>
+                <li>Contains <span class="ingr">lactose</li>
+              </ul>
+            </div>
+            <div class="Chicken">Chicken Burger</div>
+            <div class="Chickenphoto">
+              <img src="https://www.chicken.ca/assets/RecipePhotos/_resampled/FillWyIxNDQwIiwiNzAwIl0/Moist-Chicken-Burgers.jpg" width="150" height="100">
+            </div>
+            <div class="Chickenlist">
+              <ul>
+                <li>Contains <span class="ingr">lactose</li>
+              </ul>
+            </div>
+            <div class="Vegan">Vegan Burger</div>
+            <div class="Veganphoto">
+              <img src="https://thecheekychickpea.com/wp-content/uploads/2018/07/IMG_1013-2.jpg" width="150" height="100">
+            </div>
+            <div class="Veganlist">
+              <ul>
+                <li>Contains <span class="ingr">gluten</li>
+                <li><span class="ingr">Vegan</li>
+              </ul>
+            </div>
+          </div>
+          <!--
+          <table id="burgers">
             <thead>
               <tr>
-                <th>BBQ Burger</th>
-                <th>Chicken Burger</th>
-                <th>Vegan Burger</th>
+                <th align="center">BBQ Burger</th>
+                <th align="center">Chicken Burger</th>
+                <th align="center">Vegan Burger</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><img src="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg" alt="BBQ Burger" title="BBQ Burger" width="150" height="100">
-                <td><img src="https://www.chicken.ca/assets/RecipePhotos/_resampled/FillWyIxNDQwIiwiNzAwIl0/Moist-Chicken-Burgers.jpg" alt="Chicken Burger" title="Chicken Burger" width="150" height="100">
-                <td><img src="https://thecheekychickpea.com/wp-content/uploads/2018/07/IMG_1013-2.jpg" alt="Vegan Burger" title="Vegan Burger" width="150" height="100">
+                <td align="center"><img src="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg" alt="BBQ Burger" title="BBQ Burger" width="150" height="100">
+                <td align="center"><img src="https://www.chicken.ca/assets/RecipePhotos/_resampled/FillWyIxNDQwIiwiNzAwIl0/Moist-Chicken-Burgers.jpg" alt="Chicken Burger" title="Chicken Burger" width="150" height="100">
+                <td align="center"><img src="https://thecheekychickpea.com/wp-content/uploads/2018/07/IMG_1013-2.jpg" alt="Vegan Burger" title="Vegan Burger" width="150" height="100">
               </tr>
             </tbody>
             <tfoot>
               <tr>
                 <td>
                   <ul>
-                    <li>Contains gluten</li>
-                    <li>Lactose free</li>
+                    <li>Contains <span class="ingr">gluten</li>
+                    <li>Contains <span class="ingr">lactose</li>
                   </ul>
                 </td>
                 <td>
                   <ul>
-                    <li>Gluten free</li>
-                    <li>Contains lactose</li>
+                    <li>Contains <span class="ingr">lactose</li>
                   </ul>
                 </td>
                 <td>
                   <ul>
-                    <li>Gluten free</li>
-                    <li>Lactose free</li>
-                    <li>Vegan</li>
+                    <li>Contains <span class="ingr">gluten</li>
+                    <li><span class="ingr">Vegan</li>
                   </ul>
                 </td>
               </tr>
             </tfoot>
           </table>
+        -->
           </section>
 
-          <section>
+          <section id="information">
             <h2>Customer information</h2>
             <p>Please provide your information below</p>
             <h3>Delivery information:
@@ -81,15 +114,15 @@
                     <option>Cash at drop-off</option>
                   </select>
                 <p>Gender</p>
-                  <input type="radio" id="female" name="gender" checked>
+                  <input type="radio" id="female" name="gender" checked class="clickable">
                   <label for="female">Female</label><br>
-                  <input type="radio" id="male" name="gender" checked>
+                  <input type="radio" id="male" name="gender" checked class="clickable">
                   <label for="male">Male</label><br>
-                  <input type="radio" id="nb" name="gender" checked>
+                  <input type="radio" id="nb" name="gender" checked class="clickable">
                   <label for="nb">Non-binary</label><br>
-                  <input type="radio" id="undisclosed" name="gender" checked>
+                  <input type="radio" id="undisclosed" name="gender" checked class="clickable">
                   <label for="undisclosed">Undisclosed</label><br>
-                <button type="submit"><img src="http://vectips.com/wp-content/uploads/2016/02/133133.jpg", width="20" height="20">Place my order!</button>
+                <button type="submit" class="clickable" id="submit"><img src="http://vectips.com/wp-content/uploads/2016/02/133133.jpg", width="20" height="20">Place my order!</button>
               </form>
             </section>
           </section>
