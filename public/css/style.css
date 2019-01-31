@@ -1,7 +1,29 @@
 body {
     font-family: palatino;
-    font-size: 120%;
+    font-size: 1.2em;
 }
+@media only screen and (max-width: 700px) {
+    body {
+      font-size: 80%;
+    }
+
+    .burgers {
+      height: 9em;
+      width: 9em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+      font-size: 80%;
+    }
+
+    .burgers {
+      height: 7.5em;
+      width: 7.5em;
+    }
+}
+
 
 .ingr {
   font-weight: bold;
@@ -10,13 +32,13 @@ body {
 #select {
   background-color: #000000;
   color: #FFFFFF;
-  margin: 20px 20px 20px 20px;
+  margin: 10px 20px;
   padding: 15px;
   border: 3px dashed #FFFFFF;
 }
 
 #information {
-  margin: 50px 20px;
+  margin: 30px 20px;
   padding: 15px;
   border: 3px dashed #000000;
 }
@@ -33,18 +55,19 @@ button:hover {
 }
 
 .header {
-  margin: 50px 20px;
+  margin: 5px 20px;
   height: 200px;
   overflow: hidden;
 }
 
 #headertext {
   position: absolute;
+  margin-top: -125px;
 }
 
 #headerphoto {
-  opacity: 0.7;
-  width: 100%;
+  opacity: 0.8;
+  width: 97%;
   height: auto;
 }
 
@@ -55,7 +78,7 @@ button:hover {
 .wrapper {
      display: grid;
      grid-gap: 10px;
-     grid-template-columns: 170px 170px 170px;
+     grid-template-columns: 10em 10em 10em;
  }
 
  .BBQ {
