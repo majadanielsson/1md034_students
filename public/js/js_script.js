@@ -1,4 +1,4 @@
-
+/*--------------Not used anywhere------------------------
 function MenuItem(name, kCal, gluten, lactose, image) {
   this.name = name;
   this.kCal = kCal;
@@ -7,9 +7,11 @@ function MenuItem(name, kCal, gluten, lactose, image) {
   this.image = image;
 }
 
+
 function nameAndkCal(burger) {
   return [burger.name, burger.kCal];
 }
+--------------------------------------------------------*/
 
 var burgers = [food[0], food[1], food[2]];
 
@@ -83,15 +85,16 @@ function orderInfo() {
     }
   }
   var infoArray = [name, email, street, house, payment, gender, orderedBurgers];
+  //Just for testing
   console.log(infoArray);
   return infoArray;
 }
 
-/*
+
 function printInfo() {
   var info = customerInfo();
   document.getElementById("filled").innerHTML = info;
   console.log(info);
 }
-*/
+
 document.getElementById("submit").addEventListener("click", console.log("Button clicked!"));

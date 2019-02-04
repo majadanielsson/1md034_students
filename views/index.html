@@ -75,7 +75,10 @@
                   <label for="Non-binary">Non-binary</label><br>
                   <input type="radio" id="Undisclosed" name="gender" checked class="clickable">
                   <label for="Undisclosed">Undisclosed</label><br>
-                <button type="submit" class="clickable" id="submit" onclick="orderInfo()"><img src="http://vectips.com/wp-content/uploads/2016/02/133133.jpg", width="20" height="20">Place my order!</button>
+                <div id="ord">
+                  <button type="submit" class="clickable" id="submit" onclick="orderInfo()" v-on:click="orderClicked()"><img src="http://vectips.com/wp-content/uploads/2016/02/133133.jpg", width="20" height="20">Place my order!</button>
+                  <p>{{orderedStuff}}</p>
+                </div>
               </form>
             </section>
           </section>
