@@ -5,7 +5,7 @@
         <script type="text/javascript" src="js/menu.js"></script>
         <script src="js/js_script.js" defer></script>
         <script src="https://vuejs.org/js/vue.js"></script>
-        <script src="js/vue_script.js"></script>
+        <script src="js/vue_script.js" defer></script>
         <title>Maja's Burgers</title>
         <meta charset="utf-8"/>
     </head>
@@ -19,37 +19,20 @@
           <h2>Select burger</h2>
           <p>Choose your favorite burger below</p>
           <div id="menu">
-            <!--
-            <div class="BBQ">BBQ Burger</div>
-            <div class="BBQphoto">
-              <img src="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg" class="burgers" width="150" height="100">
+            <div v-for="burger in burgers">
+            {{ burger.name }} <br>
             </div>
-            <div class="BBQlist">
-              <ul>
-                <li>Contains <span class="ingr">gluten</li>
-                <li>Contains <span class="ingr">lactose</li>
-              </ul>
-            </div>
-
-            <div class="Chicken">Chicken Burger</div>
-            <div class="Chickenphoto">
-              <img src="https://www.chicken.ca/assets/RecipePhotos/_resampled/FillWyIxNDQwIiwiNzAwIl0/Moist-Chicken-Burgers.jpg" class="burgers" width="150" height="100">
-            </div>
-            <div class="Chickenlist">
-              <ul>
-                <li>Contains <span class="ingr">lactose</li>
-              </ul>
-            </div>
-
-            <div class="Vegan">Vegan Burger</div>
-            <div class="Veganphoto">
-              <img src="https://thecheekychickpea.com/wp-content/uploads/2018/07/IMG_1013-2.jpg" class="burgers" width="150" height="100">
-            </div>
-            <div class="Veganlist">
-              <ul>
-                <li>Contains <span class="ingr">gluten</li>
-                <li><span class="ingr">Vegan</li>
-              </ul>
+            <!--<div v-for="burger in burgers">
+              <img src ="burger.image"> Why this not work??
+            </div>-->
+            <ul v-for="burger in ingredients">
+              <li v-for="ingredient in burger">
+                {{ ingredient }}
+              </li>
+            </ul>
+<!--
+            <div v-for="burger in burgerContains">
+            {{ burger.message }} <br>
             </div>
 -->
           </div>
@@ -60,7 +43,7 @@
             <p>Please provide your information below</p>
             <h3>Delivery information:
             <section id="delivery info">
-              <form>
+              <form id="form">
                 <p>
                   <label for="name">Full name</label><br>
                   <input type="text" id="name" name="fn" required="required" placeholder="First- and last name">
@@ -85,18 +68,19 @@
                     <option>Cash at drop-off</option>
                   </select>
                 <p>Gender</p>
-                  <input type="radio" id="female" name="gender" checked class="clickable">
-                  <label for="female">Female</label><br>
-                  <input type="radio" id="male" name="gender" checked class="clickable">
-                  <label for="male">Male</label><br>
-                  <input type="radio" id="nb" name="gender" checked class="clickable">
-                  <label for="nb">Non-binary</label><br>
-                  <input type="radio" id="undisclosed" name="gender" checked class="clickable">
-                  <label for="undisclosed">Undisclosed</label><br>
-                <button type="submit" class="clickable" id="submit"><img src="http://vectips.com/wp-content/uploads/2016/02/133133.jpg", width="20" height="20">Place my order!</button>
+                  <input type="radio" id="Female" name="gender" checked class="clickable">
+                  <label for="Female">Female</label><br>
+                  <input type="radio" id="Male" name="gender" checked class="clickable">
+                  <label for="Male">Male</label><br>
+                  <input type="radio" id="Non-binary" name="gender" checked class="clickable">
+                  <label for="Non-binary">Non-binary</label><br>
+                  <input type="radio" id="Undisclosed" name="gender" checked class="clickable">
+                  <label for="Undisclosed">Undisclosed</label><br>
+                <button type="submit" class="clickable" id="submit" onclick="orderInfo()"><img src="http://vectips.com/wp-content/uploads/2016/02/133133.jpg", width="20" height="20">Place my order!</button>
               </form>
             </section>
           </section>
+        <div id="filled"></div>
       </main>
    </body>
    <hr>
