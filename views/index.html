@@ -25,16 +25,15 @@
             <!--<div v-for="burger in burgers">
               <img src ="burger.image"> Why this not work??
             </div>-->
-            <ul v-for="burger in ingredients">
-              <li v-for="ingredient in burger">
-                {{ ingredient }}
+            <ul v-for="burger in burgers">
+              <li>{{ burger.kCal }}</li>
+              <li v-if="burger.gluten==true">
+                {{ "Contains gluten" }}
+              </li>
+              <li v-if="burger.lactose==true">
+                {{ "Contains lactose" }}
               </li>
             </ul>
-<!--
-            <div v-for="burger in burgerContains">
-            {{ burger.message }} <br>
-            </div>
--->
           </div>
           </section>
 

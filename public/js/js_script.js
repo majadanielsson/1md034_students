@@ -1,4 +1,4 @@
-/*
+
 function MenuItem(name, kCal, gluten, lactose, image) {
   this.name = name;
   this.kCal = kCal;
@@ -43,32 +43,18 @@ for (var burger in burgers) {
   newkCal.appendChild(kCal);
   burgerInfo.appendChild(newkCal)
 
-  if (burgers[burger].gluten || burgers[burger].lactose) {
-    if (burgers[burger].gluten) {
-      var newGluten = document.createElement("li");
-      var gluten = document.createTextNode("Contains gluten");
-      newGluten.appendChild(gluten);
-      burgerInfo.appendChild(newGluten)
-    }
-    else {
-      var newGluten = document.createElement("li");
-      var gluten = document.createTextNode("Gluten free");
-      newGluten.appendChild(gluten);
-      burgerInfo.appendChild(newGluten)
-    }
+  if (burgers[burger].gluten) {
+    var newGluten = document.createElement("li");
+    var gluten = document.createTextNode("Contains gluten");
+    newGluten.appendChild(gluten);
+    burgerInfo.appendChild(newGluten)
+  }
 
-    if (burgers[burger].lactose) {
-      var newLactose = document.createElement("li");
-      var lactose = document.createTextNode("Contains lactose");
-      newLactose.appendChild(lactose);
-      burgerInfo.appendChild(newLactose)
-    }
-    else {
-      var newLactose = document.createElement("li");
-      var lactose = document.createTextNode("Lactose free");
-      newLactose.appendChild(lactose);
-      burgerInfo.appendChild(newLactose)
-    }
+  if (burgers[burger].lactose) {
+    var newLactose = document.createElement("li");
+    var lactose = document.createTextNode("Contains lactose");
+    newLactose.appendChild(lactose);
+    burgerInfo.appendChild(newLactose)
   }
     myElement.appendChild(burgerInfo);
 }
@@ -108,4 +94,4 @@ function printInfo() {
   console.log(info);
 }
 */
-//document.getElementById("submit").addEventListener("click", console.log("Button clicked!"));
+document.getElementById("submit").addEventListener("click", console.log("Button clicked!"));
