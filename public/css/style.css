@@ -43,7 +43,7 @@ body {
   background-color: #000000;
   color: #FFFFFF;
   margin: 10px 20px;
-  padding: 15px;
+  padding: 2em;
   border: 3px dashed #FFFFFF;
 }
 
@@ -88,10 +88,18 @@ button:hover {
 
 #menu {
      display: grid;
-     grid-gap: 10px;
+     grid-gap: 4em;
      grid-template-columns: 10em 10em 10em;
  }
 
+#info {
+  font-size: 70%;
+  margin: 20px 5px;
+  background-color: #FFB6C1;
+  border: 3px dashed #FFFFFF;
+  width: 40%
+}
+/*
  .BBQ {
    grid-column: 1;
    grid-row: 1;
@@ -136,3 +144,4 @@ button:hover {
    grid-column: 3;
    grid-row: 3;
  }
+*/

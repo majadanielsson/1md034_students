@@ -1,33 +1,34 @@
+
 new Vue({
   el: '#menu',
   data: {
-    burgers: [food[0], food[1], food[2]]
+    burgers: food
   }
 })
-/*
-new Vue({
-  el: '#order',
-  methods: {
-    orderClicked: function() {
-      var info = orderInfo();
-      console.log(info);
-    }
-  }
-})
-*/
 
 new Vue({
   el: '#ord',
   data: {
-  	here: '',
-    info: []
+    clicked: false,
+  	name: '',
+    email: '',
+    street: '',
+    house: '',
+    payment: '',
+    gender: '',
+    burgers: ''
   },
   methods: {
     ordered: function() {
-    	this.info = myFunc();
-      for (var x in this.info) {
-      	this.here += this.info[x] + " ";
-      }
+      this.clicked = true;
+    	var info = orderInfo();
+      this.name = "Name: " + info[0];
+      this.email = "Email: " + info[1];
+      this.street = "Street: " + info[2];
+      this.house = "House: " + info[3];
+      this.payment = "Payment option: " + info[4];
+      this.gender = "Gender: " + info[5];
+      this.burgers = "Burgers ordered: " + info[6];
     }
   }
 })

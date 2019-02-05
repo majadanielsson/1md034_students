@@ -20,11 +20,12 @@
           <p>Choose your favorite burger below</p>
           <div id="menu">
             <div v-for="burger in burgers">
-            {{ burger.name }} <br>
+            {{ burger.name }}
+            <input type="checkbox" name="ordered" :id="burger.name"><br>
             </div>
-            <!--<div v-for="burger in burgers">
-              <img src ="burger.image"> Why this not work??
-            </div>-->
+            <div v-for="burger in burgers">
+              <img :src ="burger.image" width="150" height="100">
+            </div>
             <ul v-for="burger in burgers">
               <li>{{ burger.kCal }}</li>
               <li v-if="burger.gluten==true">
@@ -76,13 +77,23 @@
                   <input type="radio" id="Undisclosed" name="gender" checked class="clickable">
                   <label for="Undisclosed">Undisclosed</label><br>
                 <div id="ord">
-                  <button type="submit" class="clickable" id="submit" onclick="orderInfo()" v-on:click="orderClicked()"><img src="http://vectips.com/wp-content/uploads/2016/02/133133.jpg", width="20" height="20">Place my order!</button>
-                  <p>{{orderedStuff}}</p>
+                  <button type="submit" class="clickable" id="submit" v-on:click.prevent="ordered()"><img src="http://vectips.com/wp-content/uploads/2016/02/133133.jpg" width="20" height="20">Place my order!</button>
+                  <div id="displayinfo" v-if="clicked">
+                    <h3>Order information:</h3>
+                    <div id="info">
+                      {{name}} <br>
+                      {{email}} <br>
+                      {{street}} <br>
+                      {{house}} <br>
+                      {{payment}} <br>
+                      {{gender}} <br>
+                      {{burgers}} <br>
+                    </div>
+                  </div>
                 </div>
               </form>
             </section>
           </section>
-        <div id="filled"></div>
       </main>
    </body>
    <hr>

@@ -12,54 +12,51 @@ function nameAndkCal(burger) {
   return [burger.name, burger.kCal];
 }
 --------------------------------------------------------*/
-
-var burgers = [food[0], food[1], food[2]];
-
+/////////////////////Comment this section out to only run vue-code//////////////
 //To overwrite what is written in "menu" for Vue purposes
 document.getElementById("menu").innerHTML = "";
 
 var myElement = document.getElementById("menu");
-for (var burger in burgers) {
+for (var burger in food) {
   var newDiv = document.createElement("div");
-	var burgerName = document.createTextNode(burgers[burger].name);
+	var burgerName = document.createTextNode(food[burger].name);
   newDiv.appendChild(burgerName);
   var checkbox = document.createElement("input");
   checkbox.type = "checkbox";
-  checkbox.id = burgers[burger].name;
+  checkbox.id = food[burger].name;
   checkbox.name = "ordered";
   newDiv.appendChild(checkbox);
-	myElement.appendChild(newDiv);
-}
 
-for (var burger in burgers) {
-  var myImage = new Image(150, 100);
-  myImage.src = burgers[burger].image;
-  myElement.appendChild(myImage);
-}
+  var myImage = new Image(200, 150);
+  myImage.src = food[burger].image;
+  newDiv.appendChild(myImage);
 
-for (var burger in burgers) {
   var burgerInfo = document.createElement("ul");
 
   var newkCal = document.createElement("li");
-  var kCal = document.createTextNode(burgers[burger].kCal);
+  var kCal = document.createTextNode(food[burger].kCal);
   newkCal.appendChild(kCal);
-  burgerInfo.appendChild(newkCal)
+  newDiv.appendChild(newkCal)
 
-  if (burgers[burger].gluten) {
+  if (food[burger].gluten) {
     var newGluten = document.createElement("li");
     var gluten = document.createTextNode("Contains gluten");
     newGluten.appendChild(gluten);
-    burgerInfo.appendChild(newGluten)
+    newDiv.appendChild(newGluten)
   }
 
-  if (burgers[burger].lactose) {
+  if (food[burger].lactose) {
     var newLactose = document.createElement("li");
     var lactose = document.createTextNode("Contains lactose");
     newLactose.appendChild(lactose);
-    burgerInfo.appendChild(newLactose)
+    newDiv.appendChild(newLactose)
   }
-    myElement.appendChild(burgerInfo);
+
+	myElement.appendChild(newDiv);
 }
+
+document.getElementById("submit").addEventListener("click", console.log("Button clicked!"));
+////////////////////////////////////////////////////////////////////////////////////////////
 
 function orderInfo() {
 
@@ -89,12 +86,3 @@ function orderInfo() {
   console.log(infoArray);
   return infoArray;
 }
-
-
-function printInfo() {
-  var info = customerInfo();
-  document.getElementById("filled").innerHTML = info;
-  console.log(info);
-}
-
-document.getElementById("submit").addEventListener("click", console.log("Button clicked!"));
