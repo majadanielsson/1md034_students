@@ -12,6 +12,7 @@ function nameAndkCal(burger) {
   return [burger.name, burger.kCal];
 }
 --------------------------------------------------------*/
+/*
 /////////////////////Comment this section out to only run vue-code//////////////
 //To overwrite what is written in "menu" for Vue purposes
 document.getElementById("menu").innerHTML = "";
@@ -36,20 +37,27 @@ for (var burger in food) {
   var newkCal = document.createElement("li");
   var kCal = document.createTextNode(food[burger].kCal);
   newkCal.appendChild(kCal);
-  newDiv.appendChild(newkCal)
+  newDiv.appendChild(newkCal);
 
   if (food[burger].gluten) {
     var newGluten = document.createElement("li");
     var gluten = document.createTextNode("Contains gluten");
     newGluten.appendChild(gluten);
-    newDiv.appendChild(newGluten)
+    newDiv.appendChild(newGluten);
   }
 
   if (food[burger].lactose) {
     var newLactose = document.createElement("li");
     var lactose = document.createTextNode("Contains lactose");
     newLactose.appendChild(lactose);
-    newDiv.appendChild(newLactose)
+    newDiv.appendChild(newLactose);
+  }
+
+  if (!food[burger].lactose && !food[burger].gluten) {
+    var newFree = document.createElement("li");
+    var free = document.createTextNode("Lactose and gluten free!");
+    newFree.appendChild(free);
+    newDiv.appendChild(newFree);
   }
 
 	myElement.appendChild(newDiv);
@@ -57,7 +65,7 @@ for (var burger in food) {
 
 document.getElementById("submit").addEventListener("click", console.log("Button clicked!"));
 ////////////////////////////////////////////////////////////////////////////////////////////
-
+*/
 function orderInfo() {
 
   var name = document.getElementsByName("fn")[0].value;

@@ -21,12 +21,9 @@
           <div id="menu">
             <div v-for="burger in burgers">
             {{ burger.name }}
-            <input type="checkbox" name="ordered" :id="burger.name"><br>
-            </div>
-            <div v-for="burger in burgers">
-              <img :src ="burger.image" width="150" height="100">
-            </div>
-            <ul v-for="burger in burgers">
+            <input type="checkbox" name="ordered" :id="burger.name">
+            <img :src ="burger.image" width="200" height="150">
+            <ul>
               <li>{{ burger.kCal }}</li>
               <li v-if="burger.gluten==true">
                 {{ "Contains gluten" }}
@@ -34,8 +31,11 @@
               <li v-if="burger.lactose==true">
                 {{ "Contains lactose" }}
               </li>
+              <li v-if="burger.lactose==false && burger.gluten==false">
+                {{ "Lactose and gluten free!" }}
+              </li>
             </ul>
-          </div>
+            </div>
           </section>
 
           <section id="information">
