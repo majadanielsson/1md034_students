@@ -77,7 +77,7 @@
                   <input type="radio" id="Undisclosed" name="gender" checked class="clickable">
                   <label for="Undisclosed">Undisclosed</label><br>
                 <div id="ord">
-                  <button type="submit" class="clickable" id="submit" v-on:click.prevent="ordered()"><img src="http://vectips.com/wp-content/uploads/2016/02/133133.jpg" width="20" height="20">Place my order!</button>
+                  <button type="button" class="clickable" id="submit" onclick="printInfo()" v-on:click="ordered()"><img src="http://vectips.com/wp-content/uploads/2016/02/133133.jpg" width="20" height="20">Place my order!</button>
                   <div id="displayinfo" v-if="clicked">
                     <h3>Order information:</h3>
                     <div id="info">

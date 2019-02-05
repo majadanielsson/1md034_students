@@ -33,7 +33,7 @@ var food = [
   ,
   {
   "name": "Pulled Pork Burger",
-  "kCal": "350 kCal",
+  "kCal": "490 kCal",
   "lactose": true,
   "gluten": false,
   "image": "https://d2814mmsvlryp1.cloudfront.net/wp-content/uploads/2016/12/Pork-Board-Pulled-Pork-5-copy.jpg"
