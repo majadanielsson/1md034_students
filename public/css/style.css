@@ -92,9 +92,13 @@ button:hover {
      grid-template-columns: 10em 10em 10em;
  }
 
+#infoTitle {
+  margin: 20px 5px;
+}
+
 #info {
   font-size: 70%;
-  margin: 20px 5px;
+  margin: 10px 5px;
   padding: 1em;
   background-color: #FFB6C1;
   border: 3px dashed #FFFFFF;

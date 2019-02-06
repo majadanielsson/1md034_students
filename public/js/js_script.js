@@ -65,33 +65,7 @@ for (var burger in food) {
 }
 
 document.getElementById("submit").addEventListener("click", console.log("Button clicked!"));
-/*
-//To overwrite what is written in "displayinfo" for Vue purposes
-document.getElementById("displayinfo").innerHTML = "";
 
-var displayInfo= document.getElementById("displayinfo");
-function printInfo() {
-  var infoArray = orderInfo()
-  var newDiv = document.createElement("div");
-  newDiv.id = "info";
-	var name = document.createTextNode("Namn: " + infoArray[0]);
-  newDiv.appendChild(name);
-  var email = document.createTextNode("Email: " + infoArray[1]);
-  newDiv.appendChild(email);
-  var street = document.createTextNode("Street: " + infoArray[2]);
-  newDiv.appendChild(street);
-  var house = document.createTextNode("House: " + infoArray[3]);
-  newDiv.appendChild(house);
-  var payment = document.createTextNode("Payment option: " + infoArray[4]);
-  newDiv.appendChild(payment);
-  var gender = document.createTextNode("Gender: " + infoArray[5]);
-  newDiv.appendChild(gender);
-  var burgers = document.createTextNode("Burgers ordered: " + infoArray[6]);
-  newDiv.appendChild(burgers);
-
-  displayInfo.appendChild(newDiv);
-}
-*/
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 function orderInfo() {
