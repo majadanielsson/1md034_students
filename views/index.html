@@ -5,12 +5,19 @@
         <script type="text/javascript" src="js/menu.js"></script>
         <script src="js/js_script.js" defer></script>
         <script src="https://vuejs.org/js/vue.js"></script>
+        <script src="/socket.io/socket.io.js" defer></script>
         <script src="js/vue_script.js" defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/deli-very.css">
+        <script src="/vue/vue.js" defer></script>
+        <script src="/socket.io/socket.io.js" defer></script>
+        <script src="js/deli-very.js" defer></script>
         <title>Maja's Burgers</title>
         <meta charset="utf-8"/>
     </head>
     <body>
-      <main>
+      <main id="errything">
         <figure id="header">
           <img src="http://d1hkwj6qq9t78x.cloudfront.net/static/ui/SiteSunset.jpg" alt="Maja's Burgers" title="headerphoto" id="headerphoto">
           <h1 id="headertext">Welcome to Maja's Burgers</h1>
@@ -36,13 +43,14 @@
               </li>
             </ul>
             </div>
+          </div>
           </section>
 
           <section id="information">
             <h2>Customer information</h2>
             <p>Please provide your information below</p>
             <h3>Delivery information:
-            <section id="delivery info">
+            <section id="deliveryInfo">
               <form id="form">
                 <p>
                   <label for="name">Full name</label><br>
@@ -51,14 +59,6 @@
                 <p>
                   <label for="email">E-mail</label><br>
                   <input type="email" id="email" name="e" required="required" placeholder="E-mail address">
-                </p>
-                <p>
-                  <label for="street">Street</label><br>
-                  <input type="text" id="street" name="st" required="required" placeholder="Street name">
-                </p>
-                <p>
-                  <label for="house">House</label><br>
-                  <input type="number" id="house" name="hs" required="required" placeholder="House number">
                 </p>
                 <p>
                   <label for="payment">Payment</label><br>
@@ -76,21 +76,33 @@
                   <label for="Non-binary">Non-binary</label><br>
                   <input type="radio" id="Undisclosed" name="gender" checked class="clickable">
                   <label for="Undisclosed">Undisclosed</label><br>
+
+                  <h1> Click in the map! </h1>
+                  <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+                  <div class="view-box">
+                    <div id="dots" v-on:click="displayOrder">
+                        <div
+                          v-for="order in tempOrder"
+                          v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+                          T
+                        </div>
+                    </div>
+                  </div>
+
                 <div id="ord">
-                  <button type="button" class="clickable" id="submit" onclick="printInfo()" v-on:click="ordered()"><img src="http://vectips.com/wp-content/uploads/2016/02/133133.jpg" width="20" height="20">Place my order!</button>
+                  <button type="button" class="clickable" id="submit" v-on:click="addOrder"><img src="http://vectips.com/wp-content/uploads/2016/02/133133.jpg" width="20" height="20">Place my order!</button>
                   <div id="displayinfo" v-if="clicked">
                     <p id=infoTitle>Order information:</p>
                     <div id="info">
                       {{name}} <br>
                       {{email}} <br>
-                      {{street}} <br>
-                      {{house}} <br>
                       {{payment}} <br>
                       {{gender}} <br>
-                      {{burgers}} <br>
+                      {{burgersOrd}} <br>
                     </div>
                   </div>
                 </div>
+
               </form>
             </section>
           </section>

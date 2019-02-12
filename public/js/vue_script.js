@@ -1,3 +1,6 @@
+/*
+'use strict';
+var socket = io();
 
 new Vue({
   el: '#menu',
@@ -6,14 +9,13 @@ new Vue({
   }
 })
 
+
 new Vue({
   el: '#ord',
   data: {
     clicked: false,
   	name: '',
     email: '',
-    street: '',
-    house: '',
     payment: '',
     gender: '',
     burgers: ''
@@ -24,11 +26,10 @@ new Vue({
     	var info = orderInfo();
       this.name = "Name: " + info[0];
       this.email = "Email: " + info[1];
-      this.street = "Street: " + info[2];
-      this.house = "House: " + info[3];
-      this.payment = "Payment option: " + info[4];
-      this.gender = "Gender: " + info[5];
-      this.burgers = "Burgers ordered: " + info[6];
+      this.payment = "Payment option: " + info[2];
+      this.gender = "Gender: " + info[3];
+      this.burgers = "Burgers ordered: " + info[4];
     }
   }
 })
+*/
